@@ -6,3 +6,15 @@ P:\SteamLibrary\steamapps\common\RimWorld\Mods\QualityEverything\Common\Assembli
 P:\SteamLibrary\steamapps\common\RimWorld\Mods\QualityEverything\Source\obj\Debug\QualityEverything.csprojAssemblyReference.cache
 P:\SteamLibrary\steamapps\common\RimWorld\Mods\QualityEverything\Source\obj\Debug\QualityEverything.csproj.CoreCompileInputs.cache
 P:\SteamLibrary\steamapps\common\RimWorld\Mods\QualityEverything\Source\obj\Debug\QualityEverything.dll
+C:\Users\riesp\Desktop\dev work\Rimworld\Source\obj\Debug\QualityEverything.csproj.AssemblyReference.cache
+C:\Users\riesp\Desktop\dev work\Rimworld\Source\obj\Debug\QualityEverything.csproj.CoreCompileInputs.cache
+C:\Users\riesp\Desktop\dev work\Rimworld\Source\obj\Debug\QualityEverything.dll
+C:\Users\riesp\Desktop\dev work\Rimworld\EverythingHasQuality\Source\obj\Debug\QualityEverything.csproj.AssemblyReference.cache
+C:\Users\riesp\Desktop\dev work\Rimworld\EverythingHasQuality\Source\obj\Debug\QualityEverything.csproj.CoreCompileInputs.cache
+C:\Users\riesp\Desktop\dev work\Rimworld\EverythingHasQuality\Source\obj\Debug\QualityEverything.dll
+C:\Users\riesp\Desktop\dev work\Rimworld\EverythingHasQuality\Common\Assemblies\QualityEverything.dll
+C:\Users\riesp\Desktop\dev work\Rimworld\EverythingHasQuality\Source\obj\Debug\QualityEverything.csproj.CopyComplete
+D:\Steam\steamapps\common\RimWorld\Mods\EverythingHasQuality\Source\obj\Debug\QualityEverything.csproj.AssemblyReference.cache
+D:\Steam\steamapps\common\RimWorld\Mods\EverythingHasQuality\Source\obj\Debug\QualityEverything.csproj.CoreCompileInputs.cache
+D:\Steam\steamapps\common\RimWorld\Mods\EverythingHasQuality\Source\obj\Debug\QualityEverything.dll
+D:\Steam\steamapps\common\RimWorld\Mods\EverythingHasQuality\Common\Assemblies\QualityEverything.dll

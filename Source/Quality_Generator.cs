@@ -55,13 +55,39 @@ namespace QualityEverything
             InspirationDef inspirationDef = InspirationUtility.CheckInspired(def, relevantSkill);
             bool inspired = (inspirationDef != null && pawn.InspirationDef == inspirationDef);
             
-            if (ModSettings_QEverything.useMaterialQuality || ModSettings_QEverything.useTableQuality)
+            if ((ModSettings_QEverything.useMaterialQuality || ModSettings_QEverything.useTableQuality) && supplyQuality >= 0)
             {
-                if (supplyQuality >= 0)
+                if (ModSettings_QEverything.multSupplyFactor)
+                {
+                    switch(supplyQuality)
+					{
+                        case 0:
+                            level = (int)(level * ModSettings_QEverything.awfulSupplyFactor);
+                            break;
+                        case 1:
+                            level = (int)(level * ModSettings_QEverything.poorSupplyFactor);
+                            break;
+                        case 2:
+                            level = (int)(level * ModSettings_QEverything.normalSupplyFactor);
+                            break;
+                        case 3:
+                            level = (int)(level * ModSettings_QEverything.goodSupplyFactor);
+                            break;
+                        case 4:
+                            level = (int)(level * ModSettings_QEverything.excSupplyFactor);
+                            break;
+                        case 5:
+                            level = (int)(level * ModSettings_QEverything.masterSupplyFactor);
+                            break;
+                        case 6:
+                            level = (int)(level * ModSettings_QEverything.legSupplyFactor);
+                            break;
+                    }
+                }
+                else
                 {
                     level += supplyQuality - Mathf.Min(maxQuality, ModSettings_QEverything.stdSupplyQuality);
                 }
-                level = Mathf.Clamp(level, 0, 20); //Log.Message("Level with supplies is " + level.ToString());
             }
 
             qualityCategory = QualityUtility.GenerateQualityCreatedByPawn(level, inspired);

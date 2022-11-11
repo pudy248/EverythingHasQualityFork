@@ -9,7 +9,7 @@ namespace QualityEverything
         public static bool useMaterialQuality = true;
         public static bool useTableQuality = true;
         public static bool useSkillReq = true;
-        public static int stdSupplyQuality = 0;
+        public static int stdSupplyQuality = 2;
         public static float tableFactor = .4f;
 
         public static bool inspiredButchering = true;
@@ -82,6 +82,15 @@ namespace QualityEverything
         public static bool indivWeapons = false;
         public static bool indivApparel = false;
         public static bool indivOther = false;
+        
+        public static bool multSupplyFactor = true;
+        public static float awfulSupplyFactor = .8f;
+        public static float poorSupplyFactor = .9f;
+        public static float normalSupplyFactor = 1f;
+        public static float goodSupplyFactor = 1.1f;
+        public static float excSupplyFactor = 1.2f;
+        public static float masterSupplyFactor = 1.3f;
+        public static float legSupplyFactor = 1.4f;
 
         public static Dictionary<string, bool> stuffDict = new Dictionary<string, bool>();
         public static List<string> stuffKeys = new List<string>();
@@ -108,7 +117,7 @@ namespace QualityEverything
             Scribe_Values.Look(ref useMaterialQuality, "useMaterialQuality", true);
             Scribe_Values.Look(ref useTableQuality, "useTableQuality", true);
             Scribe_Values.Look(ref useSkillReq, "useSkillReq", true);
-            Scribe_Values.Look(ref stdSupplyQuality, "stdSupplyQuality", 0);
+            Scribe_Values.Look(ref stdSupplyQuality, "stdSupplyQuality", 2);
 
             Scribe_Values.Look(ref inspiredButchering, "inspiredButchering", true);
             Scribe_Values.Look(ref inspiredChemistry, "inspiredChemistry", true);
@@ -180,6 +189,15 @@ namespace QualityEverything
             Scribe_Values.Look(ref indivWeapons, "indivWeapons", false);
             Scribe_Values.Look(ref indivApparel, "indivApparel", false);
             Scribe_Values.Look(ref indivOther, "indivOther", false);
+
+            Scribe_Values.Look(ref multSupplyFactor, "supplyQuality", true);
+            Scribe_Values.Look(ref awfulSupplyFactor, "awfulSupplyFactor", .8f);
+            Scribe_Values.Look(ref poorSupplyFactor, "poorSupplyFactor", .9f);
+            Scribe_Values.Look(ref normalSupplyFactor, "normalSupplyFactor", 1f);
+            Scribe_Values.Look(ref goodSupplyFactor, "goodSupplyFactor", 1.1f);
+            Scribe_Values.Look(ref excSupplyFactor, "excSupplyFactor", 1.2f);
+            Scribe_Values.Look(ref masterSupplyFactor, "masterSupplyFactor", 1.3f);
+            Scribe_Values.Look(ref legSupplyFactor, "legSupplyFactor", 1.4f);
 
             Scribe_Collections.Look<string, bool>(ref stuffDict, "stuffDict", LookMode.Value, LookMode.Value, ref stuffKeys, ref stuffValues);
             Scribe_Collections.Look<string, bool>(ref bldgDict, "bldgDict", LookMode.Value, LookMode.Value, ref bldgKeys, ref bldgValues);

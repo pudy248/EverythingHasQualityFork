@@ -2,6 +2,7 @@
 using System.Linq;
 using UnityEngine;
 using RimWorld;
+using Verse.Sound;
 using Verse;
 
 namespace QualityEverything
@@ -275,14 +276,28 @@ namespace QualityEverything
             listing.Begin(secondCol);
             if (ModSettings_QEverything.useMaterialQuality || ModSettings_QEverything.useTableQuality)
             {
-                listing.Gap(12);
+                listing.Gap(12f);
                 string labelStd = "QEverything.Standard".Translate() + ((QualityCategory)ModSettings_QEverything.stdSupplyQuality).ToString();
                 string stdBuffer = ModSettings_QEverything.stdSupplyQuality.ToString();
                 Mod_SettingsUtility.LabeledIntEntry(listing.GetRect(24f), labelStd, ref ModSettings_QEverything.stdSupplyQuality, ref stdBuffer, 1, 0, 6);
-                listing.Gap(12);
+                listing.CheckboxLabeled("QEverything.SupplyQuality".Translate(), ref ModSettings_QEverything.multSupplyFactor);
+                string awfulSupplyFactor = ModSettings_QEverything.awfulSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Awful".Translate(), ref ModSettings_QEverything.awfulSupplyFactor, ref awfulSupplyFactor, .05f, .5f, .05f, 10f);
+                string poorSupplyFactor = ModSettings_QEverything.poorSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Poor".Translate(), ref ModSettings_QEverything.poorSupplyFactor, ref poorSupplyFactor, .05f, .5f, .05f, 10f);
+                string normSupplyFactor = ModSettings_QEverything.normalSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Normal".Translate(), ref ModSettings_QEverything.normalSupplyFactor, ref normSupplyFactor, .05f, .5f, .05f, 10f);
+                string goodSupplyFactor = ModSettings_QEverything.goodSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Good".Translate(), ref ModSettings_QEverything.goodSupplyFactor, ref goodSupplyFactor, .05f, .5f, .05f, 10f);
+                string excSupplyFactor = ModSettings_QEverything.excSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Excellent".Translate(), ref ModSettings_QEverything.excSupplyFactor, ref excSupplyFactor, .05f, .5f, .05f, 10f);
+                string masterSupplyFactor = ModSettings_QEverything.masterSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Masterwork".Translate(), ref ModSettings_QEverything.masterSupplyFactor, ref masterSupplyFactor, .05f, .5f, .05f, 10f);
+                string legSupplyFactor = ModSettings_QEverything.legSupplyFactor.ToString();
+                Mod_SettingsUtility.LabeledFloatEntry(listing.GetRect(24f), "QEverything.Legendary".Translate(), ref ModSettings_QEverything.legSupplyFactor, ref legSupplyFactor, .05f, .5f, .05f, 10f);
+                listing.Gap(12f);
             }
-            else listing.Gap(48);
-            listing.Gap(24f);
+            else listing.Gap(64);
             listing.GapLine();
 
             if (ModSettings_QEverything.stuffQuality)

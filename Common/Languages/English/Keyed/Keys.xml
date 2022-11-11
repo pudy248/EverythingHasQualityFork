@@ -67,4 +67,13 @@
 	<QEverything.InspiredHarvesting>Enable harvesting inspiration</QEverything.InspiredHarvesting>
 	<QEverything.InspiredMining>Enable mining inspiration</QEverything.InspiredMining>
 	<QEverything.InspiredStonecutting>Enable stonecutting inspiration</QEverything.InspiredStonecutting>
+	
+	<QEverything.SupplyQuality>Multiplicative supply quality</QEverything.SupplyQuality>
+	<QEverything.Awful>Awful</QEverything.Awful>
+	<QEverything.Poor>Poor</QEverything.Poor>
+	<QEverything.Normal>Normal</QEverything.Normal>
+	<QEverything.Good>Good</QEverything.Good>
+	<QEverything.Excellent>Excellent</QEverything.Excellent>
+	<QEverything.Masterwork>Masterwork</QEverything.Masterwork>
+	<QEverything.Legendary>Legendary</QEverything.Legendary>
 </LanguageData>

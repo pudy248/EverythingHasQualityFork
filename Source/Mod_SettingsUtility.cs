@@ -25,6 +25,45 @@ namespace QualityEverything
             }
             Widgets.TextFieldNumeric<int>(new Rect(rect.xMax - 60f, rect.yMin, 25f, rect.height), ref value, ref editBuffer, min, max);
         }
+        public static void LabeledFloatEntry(Rect rect, string label, ref float value, ref string editBuffer, float multiplier, float largeMultiplier, float min, float max)
+        {
+            rect.width -= 8f;
+            float num = rect.width / 9f;
+            rect.x += 8f;
+            Widgets.Label(rect, label);
+            if (multiplier != largeMultiplier)
+            {
+                if (Widgets.ButtonText(new Rect(rect.xMax - num * 5f, rect.yMin, num, rect.height), "--", true, true, true))
+                {
+                    value -= largeMultiplier * GenUI.CurrentAdjustmentMultiplier();
+                    value = (float)Mathf.Round(value * 100f) / 100f;
+                    editBuffer = value.ToString();
+                    SoundDefOf.Checkbox_TurnedOff.PlayOneShotOnCamera(null);
+                }
+                if (Widgets.ButtonText(new Rect(rect.xMax - num, rect.yMin, num, rect.height), "++", true, true, true))
+                {
+                    value += largeMultiplier * GenUI.CurrentAdjustmentMultiplier();
+                    value = (float)Mathf.Round(value * 100f) / 100f;
+                    editBuffer = value.ToString();
+                    SoundDefOf.Checkbox_TurnedOn.PlayOneShotOnCamera(null);
+                }
+            }
+            if (Widgets.ButtonText(new Rect(rect.xMax - num * 4f, rect.yMin, num - 3f, rect.height), "-", true, true, true))
+            {
+                value -= multiplier * GenUI.CurrentAdjustmentMultiplier();
+                value = (float)Mathf.Round(value * 100f) / 100f;
+                editBuffer = value.ToString();
+                SoundDefOf.Checkbox_TurnedOff.PlayOneShotOnCamera(null);
+            }
+            if (Widgets.ButtonText(new Rect(rect.xMax - (num * 2f) + 3f, rect.yMin, num - 3f, rect.height), "+", true, true, true))
+            {
+                value += multiplier * GenUI.CurrentAdjustmentMultiplier();
+                value = (float)Mathf.Round(value * 100f) / 100f;
+                editBuffer = value.ToString();
+                SoundDefOf.Checkbox_TurnedOn.PlayOneShotOnCamera(null);
+            }
+            Widgets.TextFieldNumeric<float>(new Rect(rect.xMax - (num * 3f) - 3f, rect.yMin, num + 5f, rect.height), ref value, ref editBuffer, min, max);
+        }
 
         public static void PopulateStuff()
         {
@@ -126,7 +165,7 @@ namespace QualityEverything
             ModSettings_QEverything.useMaterialQuality = true;
             ModSettings_QEverything.useTableQuality = true;
             ModSettings_QEverything.useSkillReq = true;
-            ModSettings_QEverything.stdSupplyQuality = 0;
+            ModSettings_QEverything.stdSupplyQuality = 2;
             ModSettings_QEverything.tableFactor = .4f;
 
             ModSettings_QEverything.inspiredButchering = true;
@@ -194,8 +233,17 @@ namespace QualityEverything
             ModSettings_QEverything.minShellQuality = 0;
             ModSettings_QEverything.maxShellQuality = 4;
 
-            //FixSilver();
-        }
+            ModSettings_QEverything.multSupplyFactor = true;
+            ModSettings_QEverything.awfulSupplyFactor = .8f;
+            ModSettings_QEverything.poorSupplyFactor = .9f;
+            ModSettings_QEverything.normalSupplyFactor = 1f;
+            ModSettings_QEverything.goodSupplyFactor = 1.1f;
+            ModSettings_QEverything.excSupplyFactor = 1.2f;
+            ModSettings_QEverything.masterSupplyFactor = 1.3f;
+            ModSettings_QEverything.legSupplyFactor = 1.4f;
+
+        //FixSilver();
+    }
 
         /*public static void FixSilver()
         {
