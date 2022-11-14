@@ -43,7 +43,7 @@ namespace QualityEverything
                 if (tradeable.ThingDef == ThingDefOf.Silver)
                 {
                     QualityCategory qc;
-                    if (tradeable.AnyThing.TryGetQuality(out qc) && qc == QualityCategory.Normal)
+                    if (tradeable.AnyThing.TryGetQuality(out qc) || qc == QualityCategory.Normal)
                     {
                         __result = tradeable;
                         return false;

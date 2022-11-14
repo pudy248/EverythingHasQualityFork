@@ -25,7 +25,12 @@ namespace QualityEverything
             QualityCategory qualityCategory;
             int minQuality = GetMinQuality(def);
             int maxQuality = GetMaxQuality(def);
-            int level = pawn.skills.GetSkill(relevantSkill).Level; //Log.Message(relevantSkill.label + " without supplies is level " + level);
+            int level;
+            if(pawn.IsColonyMech)
+                level = pawn.RaceProps.mechFixedSkillLevel;
+            else
+                level = pawn.skills.GetSkill(relevantSkill).Level;
+            //Log.Message(relevantSkill.label + " without supplies is level " + level);
             if (ModSettings_QEverything.useSkillReq)
             {
                 //Log.Message("Applying " + relevantSkill.label + " skill requirements.");
@@ -89,7 +94,6 @@ namespace QualityEverything
                     level += supplyQuality - Mathf.Min(maxQuality, ModSettings_QEverything.stdSupplyQuality);
                 }
             }
-
             qualityCategory = QualityUtility.GenerateQualityCreatedByPawn(level, inspired);
             if (ModsConfig.IdeologyActive && pawn.Ideo != null)
             {
